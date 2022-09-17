@@ -6,4 +6,13 @@
  */
 export const pick = (obj, ...fields) => {
 
+    let object = {};
+
+    for (let prop of fields) {
+        if (prop in obj) {
+            object[prop] = obj[prop];
+        }
+    }
+
+    return object;
 };

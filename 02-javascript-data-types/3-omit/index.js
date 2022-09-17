@@ -6,4 +6,14 @@
  */
 export const omit = (obj, ...fields) => {
 
+    let object = {};
+
+    for (let [prop, value] of Object.entries(obj)) {
+        if (!fields.includes(prop)) {
+            object[prop] = value;
+        }
+    }
+
+    return object;
+
 };
