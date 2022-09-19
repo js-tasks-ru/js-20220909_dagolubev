@@ -5,4 +5,14 @@
  */
 export function uniq(arr) {
 
+    const set = new Set(arr);
+
+    let result = [];
+
+    for (const elem of set) {
+        result.push(elem);
+    }
+
+    return result;
+
 }
