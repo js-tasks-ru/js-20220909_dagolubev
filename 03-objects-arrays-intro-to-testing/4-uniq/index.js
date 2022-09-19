@@ -7,7 +7,7 @@ export function uniq(arr) {
 
     const set = new Set(arr);
 
-    let result = [];
+    const result = [];
 
     for (const elem of set) {
         result.push(elem);

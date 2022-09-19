@@ -6,13 +6,13 @@
  */
 export function trimSymbols(string, size = undefined) {
 
-    if (size == undefined) return string;
+    if (size === undefined) return string;
 
     let result = '';
     
     let count = 0;
 
-    for (let s of string) {
+    for (const s of string) {
 
         if (result.at(-1) == s) {
             count++;
