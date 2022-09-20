@@ -14,7 +14,7 @@ export function trimSymbols(string, size = undefined) {
 
     for (const s of string) {
 
-        if (result.at(-1) == s) {
+        if (result.endsWith(s)) {
             count++;
         }
         else {
