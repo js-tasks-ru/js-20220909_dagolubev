@@ -8,7 +8,7 @@ export const omit = (obj, ...fields) => {
 
     const object = {};
 
-    for (let [prop, value] of Object.entries(obj)) {
+    for (const [prop, value] of Object.entries(obj)) {
         if (!fields.includes(prop)) {
             object[prop] = value;
         }

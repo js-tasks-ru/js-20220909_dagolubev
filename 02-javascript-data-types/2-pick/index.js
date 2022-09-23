@@ -9,7 +9,7 @@ export const pick = (obj, ...fields) => {
     const object = {};
 
     for (const prop of fields) {
-        if (prop in obj && obj.hasOwnProperty(prop) ) {
+        if (Object.hasOwn(obj, prop) ) {
             object[prop] = obj[prop];
         }
     }

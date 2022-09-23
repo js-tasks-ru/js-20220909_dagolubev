@@ -7,13 +7,13 @@ export function createGetter(path) {
 
     const pathKeys = path.split('.');
 
-    return function (object = undefined) {
+    return function (object) {
 
         function getValue(obj, [prop, ...rest]) {
 
-            if (obj != undefined) {
+            if (obj !== undefined) {
     
-                if (rest.length == 0) {
+                if (rest.length === 0) {
     
                     return obj[prop];
             

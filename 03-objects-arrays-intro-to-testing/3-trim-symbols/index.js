@@ -12,9 +12,9 @@ export function trimSymbols(string, size = undefined) {
     
     let count = 0;
 
-    for (const s of string) {
+    for (const char of string) {
 
-        if (result.endsWith(s)) {
+        if (result.endsWith(char)) {
             count++;
         }
         else {
@@ -22,7 +22,7 @@ export function trimSymbols(string, size = undefined) {
         }
 
         if (count <= size) {
-            result += s;
+            result += char;
         }
 
     }

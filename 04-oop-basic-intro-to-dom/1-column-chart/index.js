@@ -1,10 +1,10 @@
 export default class ColumnChart {
     constructor(params = {}) {
-        this.title  = params.label ?? '';
-        this.list   = params.data ?? [];
+        this.title  = params.label || '';
+        this.list   = params.data || [];
         this.link   = params.link;
         this.value  = params.value;
-        this.format = params.formatHeading;
+        this.format = params.formatHeading || (value => value);
 
         this.chartHeight = 50;
 
@@ -32,12 +32,13 @@ export default class ColumnChart {
     }
 
     getValue() {
-        if (this.value == undefined) return '';
-        return (typeof this.format == 'function') ? this.format(this.value) : this.value;
+        if (this.value === undefined) return '';
+
+        return this.format(this.value);
     }
 
     getLink() {
-        return (this.link != undefined) ? `<a href="${this.link}" class="column-chart__link">View all</a>`: '';
+        return (this.link !== undefined) ? `<a href="${this.link}" class="column-chart__link">View all</a>`: '';
     }
 
     getColumn(itemValue) {
