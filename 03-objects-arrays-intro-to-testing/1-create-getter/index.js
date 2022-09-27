@@ -5,4 +5,26 @@
  */
 export function createGetter(path) {
 
+    const pathKeys = path.split('.');
+
+    return function (object) {
+
+        function getValue(obj, [prop, ...rest]) {
+
+            if (obj !== undefined) {
+    
+                if (rest.length === 0) {
+    
+                    return obj[prop];
+            
+                } else {
+    
+                    return getValue(obj[prop], rest);
+        
+                }
+            }
+        }
+    
+        return getValue(object, pathKeys);
+    }
 }
